@@ -130,10 +130,40 @@ namespace csi281 {
             // visit is a lambda expression; think about it like a mini-function
             // that can be called by calling visit(yourVertexGoesHere)
             // this aligns with the inner function visit() from the pseudo code in the slides
+
+			//	1. Pick a starting vertex to be in the minimum spanning
+			//	tree
+			//	2. Find the lowest - weight edge connecting the minimum
+			//	spanning tree to the vertices not yet in the minimum
+			//	spanning tree
+			//	3. Add the vertex at the end of that lowest - weight edge
+			//	to the minimum spanning tree
+			//	4. Repeat steps 2 and 3 until every vertex in the graph is
+			//	in the minimum spanning tree
+
             auto visit = [&](V v) {
                 // YOUR CODE HERE
+				if (visited.find() == visited.end())
+				{
+					visited.insert(v);
+					frontier.push(WeightedEdge(v, v, w));
+				}
             };
             
+			visited[start] = start;
+
+			while (!frontier.empty())
+			{
+				v node = frontier.top();
+				frontier.pop();
+				if (visited.find(node) != visited)
+				{
+					continue;
+				}
+				solution.push_back(node);
+				//visit(edge.v) ??
+			}
+
             // YOUR CODE HERE
             
             return solution;
