@@ -1,0 +1,16 @@
+Please write your answers in a file called "answers.txt" with your name
+at the top in this repository. Please number each answer.
+
+Feel free to do online research to answer these questions. But if you do, be sure to cite your source with your answer. A URL is sufficient.
+
+1. How can Jarnik's algorithm be re-configured to find the maximum-spanning-tree instead of the minimum-spanning-tree?
+
+2. How is a minimum-spanning-tree different from a solution to The Traveling Salesman problem?
+
+3. Rewrite the weighted graph cityGraph2 from test.cpp in adjacency matrix form. You can enter a text table yourself in your answers file, or copy and paste a text table from https://www.tablesgenerator.com/text_tables or add an additional image/spreadsheet file to your repository or put a link in question 3 to a Google Sheet. It's your call.
+
+4. What is the Big-O time complexity of Jarnik's algorithm when a priority queue (binary heap) is used? What about when it is not used? Why is there a difference?
+
+5. Why is Jarnik's algorithm a greedy algorithm?
+
+6. Jarnik's algorithm is commonly known as Prim's algorithm, even though Jarnik discovered it and published it decades before Prim rediscovered it. Research another algorithm that has a different common name from its original discoverer. What is the purpose of the algorithm and why did its original creator not get credit?
