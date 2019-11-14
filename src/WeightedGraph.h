@@ -143,25 +143,30 @@ namespace csi281 {
 
             auto visit = [&](V v) {
                 // YOUR CODE HERE
-				if (visited.find() == visited.end())
+				visited.insert(v);
+				for (auto& p : neighborsWithWeights(v))
 				{
-					visited.insert(v);
-					frontier.push(WeightedEdge(v, v, w));
+				if (visited.find(p.to) == visited.end())
+				{
+					frontier.push(p);
+				}
+
 				}
             };
             
-			visited[start] = start;
+			visit(start);
 
+			
 			while (!frontier.empty())
 			{
-				v node = frontier.top();
+				WeightedEdge node = frontier.top();
 				frontier.pop();
-				if (visited.find(node) != visited)
+				if (visited.find(node.to) != visited.end())
 				{
 					continue;
 				}
 				solution.push_back(node);
-				//visit(edge.v) ??
+				visit(node.to);
 			}
 
             // YOUR CODE HERE
