@@ -1,0 +1,45 @@
+﻿Daniel Hartman
+
+1. Invert the weight on all the edges so the priority queue pops them in reverse order.
+
+2.  Traveling Salesman problem requires finding the shortest path that visits every city on the map and returns to the start at the end in one continuous trip. Minimum spanning trees create routes to points, but does so without cycling back to the starting point since there already is technically a path there, which is why Jarnik’s algorithm is greedy.
+
+https://www.geeksforgeeks.org/travelling-salesman-problem-set-2-approximate-using-mst/
+
+
+3. 
+
+
++---------------+---------+---------+---------------+--------+-----------+
+|               | Chicago | Seattle | San Francisco | Dallas | Riverside |
++---------------+---------+---------+---------------+--------+-----------+
+| Chicago       | 0       | 1737    | -1            | 805    | 1704      |
++---------------+---------+---------+---------------+--------+-----------+
+| Seattle       | 1737    | 0       | 678           | -1     | -1        |
++---------------+---------+---------+---------------+--------+-----------+
+| San Francisco | -1      | 678     | 0             | -1     | 386       |
++---------------+---------+---------+---------------+--------+-----------+
+| Dallas        | 805     | -1      | -1            | 0      | -1        |
++---------------+---------+---------+---------------+--------+-----------+
+| Riverside     | 1704    | -1      | 386           | -1     | 0         |
++---------------+---------+---------+---------------+--------+-----------+
+
+
+
+
+4. 
+Adjacency matrix only: O(|V|^2)
+
+
+There is a difference because a priority queue orders the edges and allows the algorithm to find the minimum weight edges within its inner loop.
+
+
+https://en.wikipedia.org/wiki/Prim%27s_algorithm
+
+
+5. 
+It makes decisions based on what is optimal immediately, because it always chooses the weight with the lowest edge near it that leads to a new vertex.
+
+
+6.  Boruvka’s algorithm is another case of an algorithm being rediscovered and republished at a later point in time under a new name much like Jarnik’s algorithm, that name being Sollin’s algorithm. The purpose of the algorithm is to find the minimum spanning tree in a graph where every edge has a unique weight.
+https://en.wikipedia.org/wiki/Bor%C5%AFvka%27s_algorithm

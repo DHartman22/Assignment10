@@ -6,6 +6,7 @@
 //  You should not add any additional methods to this class.
 //
 //  Copyright 2019 David Kopec
+//  Modified by Daniel Hartman
 //
 //  Permission is hereby granted, free of charge, to any person
 //  obtaining a copy of this software and associated documentation files
@@ -146,31 +147,27 @@ namespace csi281 {
 				visited.insert(v);
 				for (auto& p : neighborsWithWeights(v))
 				{
-				if (visited.find(p.to) == visited.end())
+				if (visited.find(p.to) == visited.end()) //pushes unvisited neighbors of v to frontier
 				{
 					frontier.push(p);
 				}
-
 				}
             };
             
-			visit(start);
+			visit(start); //initializes the priority queue by pushing start's neighbors into it
 
-			
 			while (!frontier.empty())
 			{
 				WeightedEdge node = frontier.top();
 				frontier.pop();
-				if (visited.find(node.to) != visited.end())
+				if (visited.find(node.to) != visited.end()) //restarts while loop if the popped node has already been visited
 				{
 					continue;
 				}
-				solution.push_back(node);
-				visit(node.to);
+				solution.push_back(node); //adds the vertice and its relevant edges to the minimum spanning tree
+				visit(node.to); //push node's neighbors into frontier
 			}
 
-            // YOUR CODE HERE
-            
             return solution;
         }
 
